@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heightmap Greyscaler", "Heightmap Greyscaler.csproj", "{854CA1DA-227C-4ED4-8A78-052FF1E56934}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{854CA1DA-227C-4ED4-8A78-052FF1E56934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854CA1DA-227C-4ED4-8A78-052FF1E56934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854CA1DA-227C-4ED4-8A78-052FF1E56934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854CA1DA-227C-4ED4-8A78-052FF1E56934}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A1073DC-964C-437D-BB1E-9C84DD568109}
+	EndGlobalSection
+EndGlobal
