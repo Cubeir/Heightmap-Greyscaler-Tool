@@ -9,8 +9,8 @@ Even advanced image editing software like Adobe Photoshop has its drawbacks:
 
 Heightmap Greyscaler Tool offers an efficient way to greyscale images for Minecraft RTX without any darkbacks and won't unnecessarily alter the input.
 
+![AppImage](https://github.com/user-attachments/assets/c23e1f6b-bd83-41a6-a5c4-b3713362ad65)
 
-![AppImage](https://github.com/user-attachments/assets/aca2bda5-f8e4-4a2d-aeae-1cfc56df4a15)
 
 ## Functionality Information
 - Requires [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
