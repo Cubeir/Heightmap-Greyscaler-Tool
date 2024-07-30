@@ -1,31 +1,34 @@
 # Heightmap-Greyscaler-Tool
 A simple utility to help you quickly greyscale images for Minecraft RTX.
 
-Greyscaling images is often not possible and confusing when done through majority of image-editing apps, which simply turn the image grey without changing the Colorspace to 8-bit single-channel greyscale which is ideal and required for Minecraft with RTX, otherwise you may get errors.
+Greyscaling images through most image-editing apps can be confusing and often incorrect. These apps typically turn the image grey without changing the colorspace to the required single-channel (ideally 8-bit) greyscale needed for Minecraft with RTX, potentially causing errors.
 
-Even using advanced image editing software like Adobe Photoshop is less than ideal, this tool addresses two main issues:
-- Default settings of Photoshop cause unnecessary noise and dithering on Greyscaled images.
-- Photoshop often slightly shifts the final colors of the image depending on the software the heightmap was made or edited with.
+Even advanced image editing software like Adobe Photoshop has its drawbacks:
+- With default settings, Photoshop can introduce unnecessary noise and dithering in greyscaled images.
+- Photoshop often unavoidably shifts the final colors of the image depending on the software the heightmap was created or edited with.
 
-HGT is the ideal method to greyscale images for Minecraft with RTX while being faster at processing files in bulk.
+Heightmap Greyscaler Tool offers an efficient way to greyscale images for Minecraft RTX without any darkbacks and won't unnecessarily alter the input.
+
+
+![AppImage](https://github.com/user-attachments/assets/aca2bda5-f8e4-4a2d-aeae-1cfc56df4a15)
+
+## Functionality Information
+- Requires [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- Images are flattened into a black background, Minecraft RTX requires fully opaque images for Heightmaps as even a single slightly transparent pixel will cause an error.
+- Only TGA, PNG, JPG/JPEG images supported by Minecraft are processed.
+- If you happen to use the conventional naming scheme for your PBR textures (such as ones generated using [TSMaker](https://github.com/Cubeir/Texture-Set-Maker)), check `Process '_heightmap' suffix only` for a layer of safety against accidentally greyscaling other textures.
+- `Search Subfolders` option enables a recursive search within the selected folder.
+- You can select files and folders simultaneously and process them at the same time, the selected files are not cleared until processing is done, becareful not to select a folder then a file and assume the folder is now unselected, it is not.
+
   
   
-### Functionality Information
-- Images are flattened into a black background, as Minecraft RTX requires fully opaque images as Heightmaps and even a single slightly transparent pixel will cause errors.
-- Only TGA, PNG, JPG and JPEG images are supported and processed.
-- If you happen to use conventional naming scheme, checking `Process '_heightmap' suffix only` will provide a layer of safety in case of an accident.
-- `Search Subfolders` will enable recursive search for the selected folder.
-- You can select both files and folders and process them at the same time, the lists aren't cleared until processing is done, becareful not to select a folder, then a file and assume the folder is now unselected, it is not!
-
 
 ## Trivia
-The Heightmap Greyscaler was initially a small part of Vanilla RTX ToolSuite, a personal app I've developed over the years that contains many useful modules made specifically for Vanilla RTX to help realise its goals.
-I decided to turn it to a seperate app as a fun test and to make it less destructive...
+The Heightmap Greyscaler was initially a small component of the Vanilla RTX ToolSuite, a personal application I have developed over the years. This suite contains numerous useful modules specifically designed to support the goals of Vanilla RTX.
 
-I once accidentally greyscaled entirety of Vanilla RTX and lost a good chunk of progress, scarred, I then started to take measures to avoid a similar event from happening ever again, including 3 realtime local backups on seperate drives and a cloud backup.
-This module can hardly pose any harm now as there are several checks, a lot has to go wrong, the user has to be out of their mind for something catastrophic to happen.
+I decided to turn the Heightmap Greyscaler into a separate app as a fun experiment and to reduce its potential for accidental data loss. In the past, I have inadvertently greyscaled the entirety of Vanilla RTX, scarred, I started to take measures to avoid a similar event from happening ever again, including 3 realtime local backups on seperate drives and a cloud backup.
+This module can hardly pose any harm now as there are several checks, a lot has to go wrong, the user has to be extraordinarily negligent for something catastrophic to happen.
 
-I may now move on to creating a fork of Vanilla RTX ToolSuite dedicated to Minecraft RTX PBR texturing in general, which I believe to be the ultimate tool for achieving consistency with high precision and level of detail.
-Think of usual means of creating PBR textures for Minecraft RTX as using a rusty kitchen knife, the ToolSuite is a surgeon's steel scalpel set.
-
+Looking ahead, I plan to create a fork of the Vanilla RTX ToolSuite dedicated to Minecraft RTX PBR texturing in general, which I believe to be the ultimate tool for achieving consistency with high precision and level of detail.
+Think of usual means of creating PBR textures for Minecraft RTX as using a rusty kitchen knife, whereas the ToolSuite is like a surgeon's set of steel scalpels.
 Don't butcher the art!
