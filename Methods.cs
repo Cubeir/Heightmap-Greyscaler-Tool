@@ -23,7 +23,7 @@ public class Methods
         }
         catch
         {
-            
+            // TODO: handle
         }
     }
     public static void OpenFile(string filePath)

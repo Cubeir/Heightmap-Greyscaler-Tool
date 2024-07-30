@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Heightmap_Greyscaler.Properties;
 namespace Heightmap_Greyscaler;
 
 public partial class MainForm : Form
@@ -19,6 +20,9 @@ public partial class MainForm : Form
         recursiveSearch_checkbox.CheckedChanged += recursiveSearch_checkbox_CheckedChanged;
         safety_checkbox.CheckedChanged += safety_checkbox_CheckedChanged;
     }
+
+
+
     private void Form1_Load(object sender, EventArgs e)
     {
 
@@ -193,6 +197,60 @@ public partial class MainForm : Form
         {
             progressBar1.Value = 0;
         }
+    }
+
+
+
+
+    // Visual UI Elements
+    private void folder_button_MouseDown(object sender, MouseEventArgs e)
+    {
+        Button clickedButton = sender as Button;
+        clickedButton.BackgroundImage = Properties.Resources.oak_dark;
+        clickedButton.BackgroundImageLayout = ImageLayout.Tile;
+        clickedButton.Cursor = Cursors.Hand;
+        clickedButton.FlatStyle = FlatStyle.Flat;
+        clickedButton.FlatAppearance.BorderColor = Color.FromArgb(44, 44, 42);
+        clickedButton.FlatAppearance.BorderSize = 3;
+    }
+    private void folder_button_MouseUp(object sender, MouseEventArgs e)
+    {
+        Button clickedButton = sender as Button;
+        clickedButton.BackgroundImage = Properties.Resources.oak;
+        clickedButton.BackgroundImageLayout = ImageLayout.Tile;
+        clickedButton.Cursor = Cursors.Hand;
+        clickedButton.FlatStyle = FlatStyle.Flat;
+        clickedButton.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+        clickedButton.FlatAppearance.BorderSize = 1;
+    }
+    private void file_button_MouseUp(object sender, MouseEventArgs e)
+    {
+        folder_button_MouseUp(sender, e);
+    }
+    private void file_button_MouseDown(object sender, MouseEventArgs e)
+    {
+        folder_button_MouseDown(sender, e);
+    }
+
+    private void greyscale_button_MouseDown(object sender, MouseEventArgs e)
+    {
+        Button clickedButton = sender as Button;
+        clickedButton.BackgroundImage = Properties.Resources.oak_greyscale_dark;
+        clickedButton.BackgroundImageLayout = ImageLayout.Tile;
+        clickedButton.Cursor = Cursors.Hand;
+        clickedButton.FlatStyle = FlatStyle.Flat;
+        clickedButton.FlatAppearance.BorderColor = Color.FromArgb(44, 44, 42);
+        clickedButton.FlatAppearance.BorderSize = 3;
+    }
+    private void greyscale_button_MouseUp(object sender, MouseEventArgs e)
+    {
+        Button clickedButton = sender as Button;
+        clickedButton.BackgroundImage = Properties.Resources.oak_greyscale;
+        clickedButton.BackgroundImageLayout = ImageLayout.Tile;
+        clickedButton.Cursor = Cursors.Hand;
+        clickedButton.FlatStyle = FlatStyle.Flat;
+        clickedButton.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+        clickedButton.FlatAppearance.BorderSize = 1;
     }
 }
 

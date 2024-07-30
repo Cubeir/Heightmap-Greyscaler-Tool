@@ -58,6 +58,8 @@ partial class MainForm
         folder_button.Text = "Select Folder";
         folder_button.UseVisualStyleBackColor = false;
         folder_button.Click += folder_button_Click;
+        folder_button.MouseDown += folder_button_MouseDown;
+        folder_button.MouseUp += folder_button_MouseUp;
         // 
         // file_button
         // 
@@ -80,6 +82,8 @@ partial class MainForm
         file_button.Text = "Select Files";
         file_button.UseVisualStyleBackColor = false;
         file_button.Click += file_button_Click;
+        file_button.MouseDown += file_button_MouseDown;
+        file_button.MouseUp += file_button_MouseUp;
         // 
         // greyscale_button
         // 
@@ -100,6 +104,8 @@ partial class MainForm
         greyscale_button.Text = "Greyscale!";
         greyscale_button.UseVisualStyleBackColor = false;
         greyscale_button.Click += greyscale_button_Click;
+        greyscale_button.MouseDown += greyscale_button_MouseDown;
+        greyscale_button.MouseUp += greyscale_button_MouseUp;
         // 
         // recursiveSearch_checkbox
         // 
