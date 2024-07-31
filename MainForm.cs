@@ -22,7 +22,6 @@ public partial class MainForm : Form
     }
 
 
-
     private void Form1_Load(object sender, EventArgs e)
     {
 
@@ -80,7 +79,6 @@ public partial class MainForm : Form
         List<string> allFilePaths = new List<string>();
         allFilePaths.AddRange(selectedFilePaths);
 
-        InitializeProgressBar(allFilePaths.Count);
 
         // Search
         if (!string.IsNullOrEmpty(selectedFolderPath))
@@ -96,12 +94,26 @@ public partial class MainForm : Form
                 .ToList();
         }
 
-        await ProcessFilesAsync(allFilePaths);
+        progressBar1.Minimum = 0;
+        progressBar1.Maximum = allFilePaths.Count;
+        progressBar1.Value = 0;
+        progressBar1.Step = 1;
+
+        foreach (var filePath in allFilePaths)
+        {
+            Methods.Greyscale(filePath);
+
+            if (progressBar1.Value < progressBar1.Maximum)
+            {
+                progressBar1.PerformStep();
+            }
+        }
 
         selectedFolderPath = string.Empty;
         selectedFilePaths.Clear();
 
         SystemSounds.Asterisk.Play();
+        progressBar1.Value = 0;
         MessageBox.Show("Processing completed.");
     }
 
@@ -151,54 +163,6 @@ public partial class MainForm : Form
 
         return imageFiles;
     }
-
-
-    /// - - - - Progress Bar - - - - ///
-    private void InitializeProgressBar(int totalItemCount)
-    {
-        if (totalItemCount > 0)
-        {
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = totalItemCount;
-            progressBar1.Value = 0;
-            progressBar1.Step = 1;
-        }
-    }
-    private async Task ProcessFilesAsync(List<string> files)
-    {
-        foreach (var filePath in files)
-        {
-            await Task.Run(() => Methods.Greyscale(filePath));
-            UpdateProgressBar();
-        }
-        ResetProgressBar();
-    }
-    private void UpdateProgressBar()
-    {
-        if (progressBar1.InvokeRequired)
-        {
-            progressBar1.Invoke((Action)UpdateProgressBar);
-        }
-        else
-        {
-            if (progressBar1.Value < progressBar1.Maximum)
-            {
-                progressBar1.PerformStep();
-            }
-        }
-    }
-    private void ResetProgressBar()
-    {
-        if (progressBar1.InvokeRequired)
-        {
-            progressBar1.Invoke((Action)ResetProgressBar);
-        }
-        else
-        {
-            progressBar1.Value = 0;
-        }
-    }
-
 
 
 
